@@ -1,20 +1,20 @@
 import React from "react";
 import Button from "../Button";
+import TextField from "../Field/Text";
+import TimeField from "../Field/Time";
 
 class Form extends React.Component {
     render(){
         return (
-            <Form>
+            <form>
                 <div>
-                    <label></label>
-                    <input></input>
+                    <TextField />
                 </div>
                 <div>
-                    <label></label>
-                    <input></input>
+                    <TimeField />
                 </div>
                 <Button />
-            </Form>
+            </form>
         )
     }
 }
