@@ -8,8 +8,9 @@ const Time = ({value, onChange}:any) => {
                 type="time"
                 name="time"
                 id="time"
-                min="00:00:00"
+                min="00:00:01"
                 max="01:30:00"
+                step="1"
                 required
                 value={value}
                 onChange={(e: any) => onChange(e.target.value)}
