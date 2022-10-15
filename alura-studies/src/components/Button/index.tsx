@@ -1,7 +1,13 @@
 import React from "react";
 import style from './Button.module.scss'
 
-const Button = ({children, type, onClick}: any) => {
+interface Props{
+    type?: "button" | "submit" | "reset" | undefined,
+    onClick?: () => void,
+    children?: React.ReactNode
+}
+
+const Button = ({type, onClick, children}: Props) => {
     return (
         <button
             type={type}

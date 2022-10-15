@@ -18,6 +18,9 @@ const Form = ({setTasks}: {setTasks: React.Dispatch<React.SetStateAction<ITasks[
             selected: false,
             completed: false
         }])
+
+        setTaskName('');
+        setTaskTime('00:00:00');
     }
 
     return (

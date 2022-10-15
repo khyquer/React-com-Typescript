@@ -7,9 +7,10 @@ import sytle from './Timer.module.scss';
 
 interface Props{
     selectedTask: ITask | undefined
+    completTask: () =>  void
 }
 
-const Timer = ({selectedTask}: Props) => {
+const Timer = ({selectedTask, completTask}: Props) => {
 
     const [timeClock, setTimeClock] = useState<number>();
 
@@ -22,9 +23,10 @@ const Timer = ({selectedTask}: Props) => {
     function countdown(counter: number = 0){
         setTimeout(() => {
             if(counter > 0){
-                setTimeClock(counter - 1);
-                return countdown(counter - 1);
+                setTimeClock(counter - 100);
+                return countdown(counter - 100);
             }
+            completTask();
         }, 1000);
     }
     

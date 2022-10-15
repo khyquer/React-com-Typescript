@@ -7,16 +7,20 @@ interface Props extends ITask {
 }
 
 const Time = ({id, name, time, selected, completed, selectTask}: Props) => {
-    const timeStyle = `${style.time} ${selected ? style.timeSelected : ''}`
+    const timeStyle = `${style.time}
+    ${selected ? style.timeSelected : ''}
+    ${completed ? style.timeCompleted : ''}
+    `
 
     return (
         <li
             className={timeStyle}
             title={id}
-            onClick={() => selectTask({id, name, time, selected, completed})}
+            onClick={() => !completed && selectTask({id, name, time, selected, completed})}
         >
             <h3>{name}</h3>
             <span>{time}</span>
+            {completed && <span className={style.completed} aria-label="Tarefa Concluída"></span>}
         </li>
     )
 }
