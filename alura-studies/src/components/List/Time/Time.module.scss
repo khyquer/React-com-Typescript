@@ -1,5 +1,5 @@
 
-.item {
+.time {
   background-color: #4D4D4D;
   border-radius: 8px;
   box-shadow: 2px 4px 4px #0000009F;
@@ -22,16 +22,16 @@
   }
 }
 
-.itemSelecionado {
+.timeSelected {
   background-color: #292929;
   box-shadow: 2px 4px 4px #0000009F inset;
 }
 
-.itemCompletado {
+.timeCompleted {
   background-color: #566F42;
   cursor: auto;
 
-  .concluido {
+  .completed {
     display: block;
     background-image: url('../../../../public/assets/img/check-mark.svg');
     background-repeat: no-repeat;

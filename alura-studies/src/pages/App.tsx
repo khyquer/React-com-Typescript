@@ -11,16 +11,20 @@ function App() {
 
   const selectTask = (taskSelected: ITask) => {
     setSelectedTask(taskSelected);
+    setTasks(oldTaks => oldTaks.map(task => ({
+      ...task,
+      selected: task.id === taskSelected.id ? true : false
+    })));
   }
 
   return (
     <div className={style.AppStyle}>
-        <Form tasks={tasks} setTasks={setTasks} />
+        <Form setTasks={setTasks} />
         <List
           tasks={tasks}
           selectTask={selectTask}
         />
-        <Timer />
+        <Timer selectedTask={selectedTask} />
     </div>
   );
 }

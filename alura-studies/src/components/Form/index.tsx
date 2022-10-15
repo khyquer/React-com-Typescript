@@ -6,19 +6,18 @@ import style from './Form.module.scss';
 import ITasks from "../../types/ITask";
 import { v4 as uuidv4 } from "uuid";
 
-const Form = ({tasks, setTasks}: {tasks: ITasks[], setTasks: React.Dispatch<React.SetStateAction<ITasks[]>>}) => {
+const Form = ({setTasks}: {setTasks: React.Dispatch<React.SetStateAction<ITasks[]>>}) => {
     const [taskName, setTaskName] = useState('');
     const [taskTime, setTaskTime] = useState('00:00:00');
 
     const saveTask = () => {
-        setTasks([...tasks, {
+        setTasks(oldTasks => [...oldTasks, {
             id: uuidv4(),
             name: taskName,
             time: taskTime,
             selected: false,
             completed: false
         }])
-        console.log(tasks);
     }
 
     return (

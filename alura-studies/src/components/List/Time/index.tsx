@@ -1,10 +1,20 @@
 import React from "react";
-import ITasks from "../../../types/ITask";
+import ITask from "../../../types/ITask";
 import style from './Time.module.scss'
 
-const Time = ({id, name, time, selected, completed}: ITasks) => {
+interface Props extends ITask {
+    selectTask: (taskSelected: ITask) => void
+}
+
+const Time = ({id, name, time, selected, completed, selectTask}: Props) => {
+    const timeStyle = `${style.time} ${selected ? style.timeSelected : ''}`
+
     return (
-        <li className={style.item} title={id}>
+        <li
+            className={timeStyle}
+            title={id}
+            onClick={() => selectTask({id, name, time, selected, completed})}
+        >
             <h3>{name}</h3>
             <span>{time}</span>
         </li>
