@@ -3,12 +3,10 @@ import Form from '../components/Form';
 import List from '../components/List';
 import Timer from '../components/Timer';
 import style from './App.module.scss';
+import ITask from '../types/ITask';
 
 function App() {
-  const [tasks, setTasks] = useState([{
-      name: 'Estudar React',
-      time: '01:00:00'
-  }]);
+  const [tasks, setTasks] = useState<ITask[] | []>([]);
 
   return (
     <div className={style.AppStyle}>

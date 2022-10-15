@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import ITasks from "../../types/ITasks";
 import Button from "../Button";
 import TextField from "../Field/Text";
 import TimeField from "../Field/Time";
-import style from './Form.module.scss'
+import style from './Form.module.scss';
+import ITasks from "../../types/ITask";
+import { v4 as uuidv4 } from 'uuid';
 
 const Form = ({tasks, setTasks}: {tasks: ITasks[], setTasks: React.Dispatch<React.SetStateAction<ITasks[]>>}) => {
     const [taskName, setTaskName] = useState('');

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Time from "./Time";
 import style from './List.module.scss'
-import ITasks from '../../types/ITasks'
+import ITasks from '../../types/ITask'
 
 const List = ({tasks, setTasks}: {tasks: ITasks[], setTasks: React.Dispatch<React.SetStateAction<ITasks[]>>}) => {
 

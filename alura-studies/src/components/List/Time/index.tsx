@@ -6,7 +6,7 @@ interface TimeInterface {
     time: string
 }
 
-const Time = ({name, time}: TimeInterface) => {
+const Time = ({id, name, time, selected, completed}: TimeInterface) => {
     return (
         <li className={style.item}>
             <h3>{name}</h3>
