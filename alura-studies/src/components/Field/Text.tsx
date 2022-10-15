@@ -1,6 +1,6 @@
 import style from './Field.module.scss'
 
-const Text = () =>  {
+const Text = ({value}:any) =>  {
     return (
         <div className={style.inputContainer}>
             <label htmlFor="task">Adicione um estudo</label>
@@ -10,6 +10,8 @@ const Text = () =>  {
                 id="task"
                 placeholder="O que você quer estudar?"
                 required
+                value={value}
+                
             />
         </div>
     )
