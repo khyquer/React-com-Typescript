@@ -1,6 +1,6 @@
 import style from './Field.module.scss'
 
-const Time = ({value}:any) => {
+const Time = ({value, onChange}:any) => {
     return (
         <div className={style.inputContainer}>
             <label htmlFor="time">Adicione um estudo</label>
@@ -12,6 +12,7 @@ const Time = ({value}:any) => {
                 max="01:30:00"
                 required
                 value={value}
+                onChange={(e: any) => onChange(e.target.value)}
             />
         </div>
     )

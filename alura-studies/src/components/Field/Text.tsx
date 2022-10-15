@@ -1,6 +1,9 @@
 import style from './Field.module.scss'
 
-const Text = ({value}:any) =>  {
+const Text = ({value, onChange}:any) =>  {
+    const onChangeText = (e: any) => {
+        onChange(e.target.value)
+    }
     return (
         <div className={style.inputContainer}>
             <label htmlFor="task">Adicione um estudo</label>
@@ -11,7 +14,7 @@ const Text = ({value}:any) =>  {
                 placeholder="O que você quer estudar?"
                 required
                 value={value}
-                
+                onChange={(e: any) => onChange(e.target.value)}
             />
         </div>
     )
