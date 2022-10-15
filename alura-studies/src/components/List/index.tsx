@@ -10,6 +10,10 @@ const List = () => {
         {
             name: 'Estudar Typescript',
             time: '02:00:00'
+        },
+        {
+            name: 'Revisar',
+            time: '03:00:00'
         }
     ]
 

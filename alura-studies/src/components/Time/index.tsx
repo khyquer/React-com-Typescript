@@ -8,9 +8,9 @@ interface TimeInterface {
 
 const Time = (prop: TimeInterface) => {
     return (
-        <li key="0">
-            <h3>Nome da tarefa s</h3>
-            <span>00:00:00</span>
+        <li key={prop.key}>
+            <h3>{prop.name}</h3>
+            <span>{prop.time}</span>
         </li>
     )
 }
