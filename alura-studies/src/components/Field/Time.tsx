@@ -1,21 +1,19 @@
-import React from "react";
+import style from './Field.module.scss'
 
-class Time extends React.Component {
-    render(){
-        return (
-            <div className="inputContainer">
-                <label htmlFor="time">Adicione um estudo</label>
-                <input
-                    type="time"
-                    name="time"
-                    id="time"
-                    min="00:00:00"
-                    max="01:30:00"
-                    required
-                />
-            </div>
-        )
-    }
+const Time = () => {
+    return (
+        <div className={style.inputContainer}>
+            <label htmlFor="time">Adicione um estudo</label>
+            <input
+                type="time"
+                name="time"
+                id="time"
+                min="00:00:00"
+                max="01:30:00"
+                required
+            />
+        </div>
+    )
 }
 
 export default Time;

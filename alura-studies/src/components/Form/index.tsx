@@ -2,12 +2,12 @@ import React from "react";
 import Button from "../Button";
 import TextField from "../Field/Text";
 import TimeField from "../Field/Time";
-import './style.scss'
+import style from './Form.module.scss'
 
 class Form extends React.Component {
     render(){
         return (
-            <form className="newTask">
+            <form className={style.newTask}>
                 <TextField />
                 <TimeField />
                 <Button />
