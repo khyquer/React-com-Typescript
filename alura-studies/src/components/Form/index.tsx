@@ -4,7 +4,7 @@ import TextField from "../Field/Text";
 import TimeField from "../Field/Time";
 import style from './Form.module.scss';
 import ITasks from "../../types/ITask";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 const Form = ({tasks, setTasks}: {tasks: ITasks[], setTasks: React.Dispatch<React.SetStateAction<ITasks[]>>}) => {
     const [taskName, setTaskName] = useState('');
@@ -12,9 +12,13 @@ const Form = ({tasks, setTasks}: {tasks: ITasks[], setTasks: React.Dispatch<Reac
 
     const saveTask = () => {
         setTasks([...tasks, {
+            id: uuidv4(),
             name: taskName,
-            time: taskTime
+            time: taskTime,
+            selected: false,
+            completed: false
         }])
+        console.log(tasks);
     }
 
     return (

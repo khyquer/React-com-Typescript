@@ -1,14 +1,10 @@
 import React from "react";
+import ITasks from "../../../types/ITask";
 import style from './Time.module.scss'
 
-interface TimeInterface {
-    name: string,
-    time: string
-}
-
-const Time = ({id, name, time, selected, completed}: TimeInterface) => {
+const Time = ({id, name, time, selected, completed}: ITasks) => {
     return (
-        <li className={style.item}>
+        <li className={style.item} title={id}>
             <h3>{name}</h3>
             <span>{time}</span>
         </li>

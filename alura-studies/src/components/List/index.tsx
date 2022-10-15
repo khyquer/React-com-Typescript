@@ -1,23 +1,28 @@
 import { useState } from "react";
 import Time from "./Time";
-import style from './List.module.scss'
-import ITasks from '../../types/ITask'
+import style from './List.module.scss';
+import ITasks from '../../types/ITask';
 
-const List = ({tasks, setTasks}: {tasks: ITasks[], setTasks: React.Dispatch<React.SetStateAction<ITasks[]>>}) => {
+interface Props {
+    tasks: ITasks[],
+    selectTask: (taskSelected: ITasks) => void
+}
 
-    const addTask = () => {
-        setTasks([...tasks, {
-            name: 'Estudar React',
-            time: '01:00:00'
-        }])
-    }
 
+const List = ({tasks, selectTask}: Props) => {
     return (
         <aside className={style.listTasks}>
-            <h2 onClick={addTask}> Estudos do Dia</h2>
+            <h2> Estudos do Dia</h2>
             <ul>
-                {tasks.map(({name, time}, index) => (
-                    <Time name={'#' + index + ' ' + name} time={time} key={index.toString()} />
+                {tasks.map(({id, name, time, selected, completed}, index) => (
+                    <Time
+                        id={id}
+                        name={'#' + index + ' ' + name}
+                        time={time}
+                        key={id}
+                        selected={selected}
+                        completed={completed}
+                    />
                 ))}
             </ul>
         </aside>

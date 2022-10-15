@@ -7,11 +7,19 @@ import ITask from '../types/ITask';
 
 function App() {
   const [tasks, setTasks] = useState<ITask[] | []>([]);
+  const [selectedTask, setSelectedTask] = useState<ITask>();
+
+  const selectTask = (taskSelected: ITask) => {
+    setSelectedTask(taskSelected);
+  }
 
   return (
     <div className={style.AppStyle}>
         <Form tasks={tasks} setTasks={setTasks} />
-        <List tasks={tasks} setTasks={setTasks} />
+        <List
+          tasks={tasks}
+          selectTask={selectTask}
+        />
         <Timer />
     </div>
   );
