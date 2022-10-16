@@ -23,8 +23,8 @@ const Timer = ({selectedTask, completTask}: Props) => {
     function countdown(counter: number = 0){
         setTimeout(() => {
             if(counter > 0){
-                setTimeClock(counter - 100);
-                return countdown(counter - 100);
+                setTimeClock(counter - 1);
+                return countdown(counter - 1);
             }
             completTask();
         }, 1000);
